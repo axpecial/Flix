@@ -11,7 +11,7 @@ import AlamofireImage
 import PKHUD
 
 class NowPlayingViewController: UIViewController, UITableViewDataSource {
-
+    
     // MARK: Properties
     @IBOutlet weak var moviesTableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -31,11 +31,10 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
         
         activityIndicator.startAnimating()
         fetchMovies()
-        activityIndicator.stopAnimating()
         
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -44,7 +43,7 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movies.count;
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = moviesTableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as! MovieCell
         let movie = movies[indexPath.row]
@@ -93,24 +92,34 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
                 self.moviesTableView.reloadData()
                 
                 self.refreshControl.endRefreshing()
+                self.activityIndicator.stopAnimating()
                 
             }
         }
         task.resume()
     }
     
-    func didPullToRefresh(_ refreshControl: UIRefreshControl) {
+    @objc func didPullToRefresh(_ refreshControl: UIRefreshControl) {
         fetchMovies()
     }
-
-    // Attempt at using a 3rd party HUD
-    /*
-    @IBAction func showAnimatedProgressHUD(_ sender: AnyObject) {
-        HUD.show(.progress, onView: tableView)
-        
-        delay(2.0) {
-            HUD.flash(.success, delay: 1.0)
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cell = sender as! UITableViewCell
+        if let indexPath = moviesTableView.indexPath(for: cell) {
+            let movie = movies[indexPath.row]
+            let detailViewController = segue.destination as! DetailViewController
+            detailViewController.movie = movie
         }
     }
-    */
+    
+    // Attempt at using a 3rd party HUD
+    /*
+     @IBAction func showAnimatedProgressHUD(_ sender: AnyObject) {
+     HUD.show(.progress, onView: tableView)
+     
+     delay(2.0) {
+     HUD.flash(.success, delay: 1.0)
+     }
+     }
+     */
 }
