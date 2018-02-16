@@ -105,7 +105,7 @@ The following **required** user stories are complete:
 The following **stretch** user stories are implemented:
 
 - [X] Dynamic Height Cells (+1)
-- [ ] Collection View AutoLayout (+2)
+- [X] Collection View AutoLayout (+2)
 
 The following **additional** user stories are implemented:
 
