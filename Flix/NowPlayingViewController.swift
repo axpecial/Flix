@@ -23,10 +23,8 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        
-        
-        
-        
+        moviesTableView.rowHeight = UITableViewAutomaticDimension
+        moviesTableView.estimatedRowHeight = 10
         
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(NowPlayingViewController.didPullToRefresh(_:)), for: .valueChanged)

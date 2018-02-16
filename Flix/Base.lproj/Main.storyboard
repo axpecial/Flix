@@ -43,12 +43,9 @@
                                                         <constraint firstAttribute="width" constant="161" id="dil-Rl-YhW"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="headTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UO2-to-log">
-                                                    <rect key="frame" x="177" y="40" width="190" height="190"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="natural" lineBreakMode="headTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UO2-to-log">
+                                                    <rect key="frame" x="177" y="40" width="190" height="145"/>
                                                     <color key="backgroundColor" red="0.41792092240665557" green="0.32668584380771304" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="190" id="oY3-Yl-tZ1"/>
-                                                    </constraints>
                                                     <string key="text">Despite his family’s baffling generations-old ban on music, Miguel dreams of becoming an accomplished musician like his idol, Ernesto de la Cruz. Desperate to prove his talent, Miguel finds himself in the stunning and colorful Land of the Dead following a mysterious chain of events. Along the way, he meets charming trickster Hector, and together, they set off on an extraordinary journey to unlock the real story behind Miguel's family history.</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <nil key="textColor"/>
@@ -68,11 +65,11 @@
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="UO2-to-log" secondAttribute="trailing" constant="8" id="9ku-48-FGA"/>
                                                 <constraint firstItem="9j4-PL-asq" firstAttribute="leading" secondItem="Tzi-ro-00f" secondAttribute="leading" constant="8" id="GXX-2C-aOO"/>
                                                 <constraint firstItem="UO2-to-log" firstAttribute="top" secondItem="Pb3-gq-wAI" secondAttribute="bottom" constant="8" id="TMF-18-yPI"/>
-                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="UO2-to-log" secondAttribute="bottom" constant="8" id="XAn-S3-gCL"/>
                                                 <constraint firstItem="Pb3-gq-wAI" firstAttribute="top" secondItem="9j4-PL-asq" secondAttribute="top" id="fAr-ta-7oZ"/>
-                                                <constraint firstAttribute="bottom" secondItem="9j4-PL-asq" secondAttribute="bottom" constant="8" id="iHd-T3-7xi"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="9j4-PL-asq" secondAttribute="bottom" constant="8" id="iHd-T3-7xi"/>
                                                 <constraint firstItem="Pb3-gq-wAI" firstAttribute="leading" secondItem="9j4-PL-asq" secondAttribute="trailing" constant="8" id="l7i-AA-ocn"/>
                                                 <constraint firstItem="UO2-to-log" firstAttribute="leading" secondItem="Pb3-gq-wAI" secondAttribute="leading" id="pBg-Nz-SU1"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="UO2-to-log" secondAttribute="bottom" constant="8" id="zpi-xi-WBX"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -159,7 +156,7 @@
                             <constraint firstItem="8hc-QD-Zu6" firstAttribute="top" secondItem="1h0-cy-OZI" secondAttribute="bottom" id="GbQ-hp-DF0"/>
                             <constraint firstItem="a9Y-iP-C8L" firstAttribute="leading" secondItem="0ca-vF-t9p" secondAttribute="trailing" constant="8" id="Hy2-gP-CrY"/>
                             <constraint firstItem="8hc-QD-Zu6" firstAttribute="leading" secondItem="AMQ-0e-AwX" secondAttribute="leading" id="LNO-bG-CYm"/>
-                            <constraint firstItem="H08-4e-iAz" firstAttribute="top" secondItem="0ca-vF-t9p" secondAttribute="bottom" constant="8" id="NbT-pa-83t"/>
+                            <constraint firstItem="H08-4e-iAz" firstAttribute="top" secondItem="0ca-vF-t9p" secondAttribute="bottom" constant="8" id="NRv-Cc-b8j"/>
                             <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="KD7-hX-2f4" secondAttribute="trailing" constant="16" id="Xtr-sv-wDX"/>
                             <constraint firstItem="a9Y-iP-C8L" firstAttribute="top" secondItem="8hc-QD-Zu6" secondAttribute="bottom" constant="8" id="Yfn-A4-vlM"/>
                             <constraint firstAttribute="trailing" secondItem="8hc-QD-Zu6" secondAttribute="trailing" id="glI-Ah-cjH"/>
@@ -253,12 +250,17 @@
                                             <rect key="frame" x="0.0" y="0.0" width="125" height="170"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="99E-wc-QuG">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="99E-wc-QuG">
                                                     <rect key="frame" x="0.0" y="0.0" width="125" height="170"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                             </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="99E-wc-QuG" firstAttribute="top" secondItem="YWn-r4-dsj" secondAttribute="top" id="YGh-Hs-i4u"/>
+                                            <constraint firstAttribute="bottom" secondItem="99E-wc-QuG" secondAttribute="bottom" id="sue-P9-8fx"/>
+                                            <constraint firstAttribute="trailing" secondItem="99E-wc-QuG" secondAttribute="trailing" id="xnI-O8-k7L"/>
+                                            <constraint firstItem="99E-wc-QuG" firstAttribute="leading" secondItem="YWn-r4-dsj" secondAttribute="leading" id="yBx-I4-tgj"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="posterImageView" destination="99E-wc-QuG" id="h9U-4l-qMy"/>
                                         </connections>

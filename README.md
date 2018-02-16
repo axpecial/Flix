@@ -104,7 +104,7 @@ The following **required** user stories are complete:
 
 The following **stretch** user stories are implemented:
 
-- [ ] Dynamic Height Cells (+1)
+- [X] Dynamic Height Cells (+1)
 - [ ] Collection View AutoLayout (+2)
 
 The following **additional** user stories are implemented:
@@ -142,6 +142,3 @@ Describe any challenges encountered while building the app.
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
-
-
-[img]https://i.imgur.com/90Ql3Gk.gif[/img]
