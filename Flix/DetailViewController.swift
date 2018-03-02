@@ -26,13 +26,25 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var releaseDateLabel: UILabel!
     @IBOutlet weak var overviewLabel: UILabel!
     
+    var movie: Movie?
+    
+    /* Project 2
     var movie: [String: Any]?
+    End of Project 2 */
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         if let movie = movie {
+            
+            titleLabel.text = movie.title
+            releaseDateLabel.text = movie.releaseDate
+            overviewLabel.text = movie.overview
+            backdropImageView.af_setImage(withURL: movie.backdropURL!)
+            posterImageView.af_setImage(withURL: movie.posterURL!)
+            
+            /* Project 2
             // If the hashing returns nil, the optional "?" will not display anything for the text.
             titleLabel.text = movie[MovieKeys.title] as? String
             releaseDateLabel.text = movie[MovieKeys.releaseDate] as? String
@@ -46,6 +58,7 @@ class DetailViewController: UIViewController {
             
             let posterURL = URL(string: baseURLString + posterPathString)!
             posterImageView.af_setImage(withURL: posterURL)
+            End of Project 2 */
         }
     }
 

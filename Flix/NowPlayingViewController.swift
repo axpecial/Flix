@@ -16,7 +16,8 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var moviesTableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    var movies: [[String: Any]] = []
+    // var movies: [[String: Any]] = []
+    var movies: [Movie] = []
     var refreshControl: UIRefreshControl!
     
     override func viewDidLoad() {
@@ -34,8 +35,6 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
         
         activityIndicator.startAnimating()
         fetchMovies()
-        
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -47,8 +46,20 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
         return movies.count;
     }
     
+    /* Lab 3 */
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as! MovieCell
+        
+        cell.movie = movies[indexPath.row]
+        
+        return cell
+    }
+    
+    /* Project 2
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = moviesTableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as! MovieCell
+        
         let movie = movies[indexPath.row]
         let title = movie["title"] as! String
         let overview = movie["overview"] as! String
@@ -61,7 +72,7 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
         cell.overviewLabel.text = overview
         
         return cell
-    }
+    } End of Project 2 */
     
     func fetchMovies() {
         let url = URL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed")!
@@ -72,6 +83,17 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
             if let error = error {
                 print(error.localizedDescription)
             } else if let data = data {
+                
+                let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
+                let movieDictionaries = dataDictionary["results"] as! [[String: Any]]
+                
+                self.movies = []
+                for dictionary in movieDictionaries {
+                    let movie = Movie(dictionary: dictionary)
+                    self.movies.append(movie)
+                }
+                
+                /* Project 2
                 let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
                 
                 // TODO: Get the array of movies
@@ -90,7 +112,10 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
                 // TODO: Store the movies in a property to use elsewhere
                 // movie is a dictionary
                 self.movies = movies
-                
+ 
+                End of Project 2
+                */
+ 
                 // TODO: Reload your table view data
                 self.moviesTableView.reloadData()
                 
@@ -115,7 +140,7 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
         }
     }
     
-    // Attempt at using a 3rd party HUD
+    // TODO: Attempt at using a 3rd party HUD
     /*
      @IBAction func showAnimatedProgressHUD(_ sender: AnyObject) {
      HUD.show(.progress, onView: tableView)
