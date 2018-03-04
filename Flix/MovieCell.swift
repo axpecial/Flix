@@ -21,12 +21,9 @@ class MovieCell: UITableViewCell {
         willSet( movie ) {}
         // Called just after the value is set
         didSet {
-            
-            // TODO: Optional or Unwrapped?
-            
             titleLabel.text = movie!.title
             overviewLabel.text = movie!.overview
-            posterImageView.af_setImage(withURL: movie!.posterURL!)
+            posterImageView.af_setImage(withURL: (movie?.posterURL)!)
         }
     }
     

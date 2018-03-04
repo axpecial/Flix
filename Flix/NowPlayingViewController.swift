@@ -34,7 +34,47 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
         moviesTableView.dataSource = self
         
         activityIndicator.startAnimating()
+       /*
+        MovieApiManager().nowPlayingMovies { (movies: [Movie]?, error: Error?) in
+            if let movies = movies {
+                self.movies = movies
+                self.moviesTableView.reloadData()
+            }
+        }*/
+        
+        /* Project 2
         fetchMovies()
+        */
+        
+        fetchPopularMovies()
+        
+        self.refreshControl.endRefreshing()
+        self.activityIndicator.stopAnimating()
+    }
+    
+    func fetchPopularMovies() {
+        let url = URL(string: "https://api.themoviedb.org/3/movie/popular?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed")!
+        let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
+        let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
+        let task = session.dataTask(with: request) { (data, response, error) in
+            // This will run when the network request returns
+            if let error = error {
+                print(error.localizedDescription)
+            } else if let data = data {
+                
+                let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
+                let movieDictionaries = dataDictionary["results"] as! [[String: Any]]
+                
+                self.movies = []
+                for dictionary in movieDictionaries {
+                    let movie = Movie(dictionary: dictionary)
+                    self.movies.append(movie)
+                }
+                // TODO: Reload your table view data
+                self.moviesTableView.reloadData()
+            }
+        }
+        task.resume()
     }
     
     override func didReceiveMemoryWarning() {
@@ -118,9 +158,6 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
  
                 // TODO: Reload your table view data
                 self.moviesTableView.reloadData()
-                
-                self.refreshControl.endRefreshing()
-                self.activityIndicator.stopAnimating()
                 
             }
         }

@@ -24,15 +24,12 @@ class Movie {
     var releaseDate: String
     
     init(dictionary: [String: Any]) {
-        
-        // TODO: When do we use optionals vs. unwrapped?
-        
         title = dictionary["title"] as? String ?? "No title"
         overview = dictionary["overview"] as? String ?? "No overview"
         posterPathStr = dictionary["poster_path"] as? String
-        posterURL = URL(string: baseURLStr + posterPathStr!)
+        posterURL = URL(string: baseURLStr + posterPathStr!)!
         backdropPathStr = dictionary["backdrop_path"] as? String
-        backdropURL = URL(string: baseURLStr + backdropPathStr!)
+        backdropURL = URL(string: baseURLStr + backdropPathStr!)!
         releaseDate = dictionary["release_date"] as? String ?? "No release date"
     }
     
