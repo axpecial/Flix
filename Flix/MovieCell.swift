@@ -15,9 +15,10 @@ class MovieCell: UITableViewCell {
     @IBOutlet weak var overviewLabel: UILabel!
     @IBOutlet weak var posterImageView: UIImageView!
     
+    // Property Observers
+    // Allow us to set the values of this MovieCell's properties in response to a change in 
     var movie: Movie? {
-        // Property Observers
-        // Called just before the value is stored
+        // Called just before the value is set
         willSet( movie ) {}
         // Called just after the value is set
         didSet {

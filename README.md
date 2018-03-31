@@ -1,8 +1,8 @@
+**Flix** is a movies app displaying box office and top rental DVDs using [The Movie Database API](http://docs.themoviedb.apiary.io/#).
+
 # Project 1 - *Flix*
 
-**Flix** is a movies app using the [The Movie Database API](http://docs.themoviedb.apiary.io/#).
-
-Time spent: **5** hours spent in total
+Time spent: **10** hours spent in total
 
 ## User Stories
 
@@ -24,7 +24,7 @@ The following **stretch** user stories are implemented:
 
 The following **additional** user stories are implemented:
 
-- [ ] List anything else that you can get done to improve the app functionality! (+1-3pts)
+- List anything else that you can get done to improve the app functionality! (+1-3pts)
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
@@ -41,12 +41,14 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+Describe any challenges encounter while building the app.
+
+- Steps of a network request
+- Purpose of a closure and when to use them
+- Purpose of an if let statement
 
 
 # Project 2 - *Flix*
-
-**Flix** is a movies app displaying box office and top rental DVDs using [The Movie Database API](http://docs.themoviedb.apiary.io/#).
 
 Time spent: **5** hours spent in total
 
@@ -62,13 +64,10 @@ The following **stretch** features are implemented:
 - [ ] User can tap a poster in the collection view to see a detail screen of that movie (+3pts)
 - [ ] In the detail view, when the user taps the poster, a new screen is presented modally where they can view the trailer (+3pts)
 - [ ] Customize the navigation bar (+1pt)
-- [ ] List in any optionals you didn't finish from last week (+1-3pts)
-   - ...
-   - ...
 
 The following **additional** features are implemented:
 
-- [ ] List anything else that you can get done to improve the app functionality!
+- List anything else that you can get done to improve the app functionality!
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
@@ -90,8 +89,6 @@ Describe any challenges encountered while building the app.
 
 # Lab 3 - *Flix*
 
-**Flix** is a movies app displaying box office and top rental DVDs using [The Movie Database API](http://docs.themoviedb.apiary.io/#).
-
 Time spent: **2** hours spent in total
 
 ## User Stories
@@ -109,12 +106,12 @@ The following **stretch** user stories are implemented:
 
 The following **additional** user stories are implemented:
 
-- [ ] List anything else that you can get done to improve the app functionality! (+1-3pts)
+- List anything else that you can get done to improve the app functionality! (+1-3pts)
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
 1. Auto Layout
-2. Modifying layout in code
+2. Programmatically managing visual app elements
 
 ## Video Walkthrough
 
@@ -132,7 +129,7 @@ Describe any challenges encountered while building the app.
 
 **Flix** is a movies app displaying box office and top rental DVDs using [The Movie Database API](http://docs.themoviedb.apiary.io/#).
 
-Time spent: **X** hours spent in total
+Time spent: **2** hours spent in total
 
 ## User Stories
 
@@ -145,12 +142,12 @@ The following **required** user stories are complete:
 
 The following **additional** user stories are implemented:
 
-- [ ] List anything else that you can get done to improve the app functionality! (+1-3pts)
+- List anything else that you can get done to improve the app functionality! (+1-3pts)
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1.
-2.
+1. 
+2. 
 
 ## Video Walkthrough
 
@@ -163,6 +160,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 ## Notes
 
 Describe any challenges encountered while building the app.
+- Determining which information should belong in the movie model
 
 ## License
 

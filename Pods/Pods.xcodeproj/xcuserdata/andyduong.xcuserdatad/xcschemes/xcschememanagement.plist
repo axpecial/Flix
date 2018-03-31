@@ -14,16 +14,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>OAuthSwift.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>OAuthSwiftAlamofire.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>PKHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
